@@ -54,6 +54,7 @@ module.exports = {
         // 如果只有一个loader
         // loader:'css-loader',
         // 通过loader可以支持其他类型资源编译，比如css、图片等
+        // use 从右往左执行
         use: ["style-loader", "css-loader"],
       },
     ],
