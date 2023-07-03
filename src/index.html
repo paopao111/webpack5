@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./index.css">
+    <!-- ejs 用来匹配webpack 中templateParameters，来相应地做替换 -->
+    <!-- <title><%= titleName%></title> -->
+    <!-- 如果一定需要使用webpack中的title配置项的话,可以采用如下方式 -->
+    <title><%= htmlWebpackPlugin.options.title1%></title>
     <script src="./index.js"></script>
 </head>
 <body>
