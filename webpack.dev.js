@@ -147,6 +147,41 @@ const config = {
         new TerserPlugin({ test: /\.js$/ }),
       ],
     },
+    /*
+    sourcemap 开发调试&线上排查利器
+    1 配置规范 -devtool
+    [inline-|hidden-|eval-][nosources-][cheat-[module-]]source-map
+        引入方式：
+            inline：内联 将生成的sourcemap文件，内联到我们的文件中
+            hidden：会生成sourcemap，但是不在文件中引入
+            eval：sourcemap也会在源代码中，但是不是放在文件最后，放在代码里面中间，通过eval的方式执行出来
+        源码展示：nosource
+        调试展示(展示行信息)：cheap、cheap-module
+    2 production模式下：
+            source-map、
+            nosources-source-map、
+            hidden-nosources-source-map、
+            hidden-source-map
+    3
+    {
+        "version": 3, //文件版本
+        "file": "js/test.js", //对应文件名称
+        "mappings": "gCACAA,QAAQC,IAAI,gB",
+        "sources": [ //源文件列表
+            "webpack://simin_/./src/test.js"
+        ],
+        "sourcesContent": [// 源文件字符串列表
+            "import './index.css';\nconsole.log('this is test')"
+        ],
+        "names": [//源文件变量名和属性名
+            "console",
+            "log"
+        ],
+        "sourceRoot": ""源文件根目录
+     }
+     4、在监控中用途比较大
+    */
+   devtool:'hidden-source-map'
   };
 module.exports = (env,arg)=>{
     console.log(env,arg)
