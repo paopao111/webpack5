@@ -1,2 +1,2 @@
 import './index.css';
-console.log('this is test')
+console.log('thidds is testdd')
